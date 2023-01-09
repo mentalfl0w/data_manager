@@ -103,11 +103,11 @@ QPair<Protocol::data_types,QJsonObject> Protocol::data_parser(QByteArray data)
         return qMakePair(RESPONSE,json_data.object());
 }
 
-QByteArray Protocol::XOR_En_Decrypt(QString src)
+QByteArray Protocol::XOR_En_Decrypt(QByteArray src)
 {
     QByteArray result;
     for(auto &i:src)
-        result.append(i.toLatin1() ^ cipher_word);
+        result.append(i ^ cipher_word);
     return result;
 }
 

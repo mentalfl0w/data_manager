@@ -51,7 +51,7 @@ private:
     explicit Protocol(QObject *parent = nullptr);
     ~Protocol();
     QByteArray data_builder(QList<any_types> &args);
-    QByteArray XOR_En_Decrypt(QString src);
+    QByteArray XOR_En_Decrypt(QByteArray src);
     QByteArray Upper_Lower_En_Decrypt(QString src);
 signals:
 
